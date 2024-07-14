@@ -5,6 +5,7 @@ let day = date.getDate();
 let month = date.getMonth()+1;
 let year = date.getFullYear();
 today.innerHTML = `${day}/${month}/${year}`;
+time.innerHTML = date.toLocaleTimeString();
 
 setInterval(() => {
     let date = new Date();
