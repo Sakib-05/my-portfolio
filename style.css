@@ -8,6 +8,10 @@ main{
 
 }
 
+/* body{
+    background-color: rgb(41, 41, 41);
+} */
+
 /* this is for the navigation bar */
 
 .navbar ul{
@@ -68,13 +72,23 @@ main{
     border-radius: 20px;
     margin-bottom: 20px;
     background-color: rgb(182, 217, 248);
-    box-shadow: 10px 10px 6px rgb(85, 126, 249);
+    box-shadow: 15px 10px 6px rgb(85, 126, 249);
     flex-shrink: 0;
-    width:30%;
+    font-size: 1.4rem;
 
 }
 .profile img{
     border-radius: 50%;
-    width:200px;
-    height:200px;
+    width:500px;
+    height:500px;
+}
+/* home page introduction part */
+.description{
+    background-color: rgb(216, 216, 213);
+    border-radius: 10px;  
+    font-size: 1.8rem;  
+    color: rgb(2, 69, 162);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 650px;
+    
 }
