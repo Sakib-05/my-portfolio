@@ -92,3 +92,11 @@ main{
     height: 650px;
     
 }
+
+/* about me page */
+.about-me p{
+    text-align: justify;
+    font-size: 1.6rem;
+    color: rgb(2, 69, 162);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
