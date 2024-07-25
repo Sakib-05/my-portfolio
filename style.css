@@ -64,6 +64,25 @@ main{
     padding-left: 10px;
 }
 
+.description a{
+    color: rgb(0, 153, 255);
+    text-decoration: none;
+}
+
+#resume{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: rgb(0, 153, 255);
+    padding:20px 20px;
+    margin-left: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+#resume:hover{
+    background-color: rgb(102, 178, 254);
+    box-shadow: 7px 3px 5px rgb(85, 126, 249);
+}
+
 /* profile section */
 .profile{
     text-align: center;
@@ -188,4 +207,24 @@ main{
 
 .socials{
     font-size: 1.4em;
+}
+
+/* projects page */
+.Projects_container{
+    background-color: rgb(246, 246, 219);
+    border-radius: 20px;
+    padding:10px 20px;
+}
+.Projects_container h1{
+    font-size: 2em;
+}
+.projects{
+    display: flex;
+    gap: 50px;
+    padding-bottom: 100%;
+}
+.projects img{
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
 }

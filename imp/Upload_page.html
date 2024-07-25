@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Picture - Dentist Volunteer Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for the upload page */
+        #upload-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+        #upload-form label,
+        #upload-form input,
+        #upload-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+        #upload-form button {
+            background-color: green;
+            color: white;
+            padding: 0.5em;
+            border: none;
+            border-radius: 0.5em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #upload-form button:hover {
+            background-color: darkgreen;
+        }
+        #image-preview {
+            width: 100%;
+            margin-top: 1em;
+        }
+        #image-preview img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_for_web.png" alt="logo" style="margin-right: 2000px;">
+        <h1 style="margin-top: -140px; margin-bottom: 30px">Upload Profile Picture</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cases.html">Cases</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="upload-form">
+            
+            <h2>Profile Details</h2>
+            <form id="profileForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="case">Case:</label>
+                <input type="text" id="case" name="case" required>
+
+                <label for="profile-picture">Upload Profile Picture:</label>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+
+                <div id="image-preview">
+                    <p>No image selected</p>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        // Handle image preview
+        document.getElementById('profile-picture').addEventListener('change', function(event) {
+            const preview = document.getElementById('image-preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function() {
+                preview.innerHTML = `<img src="${reader.result}" alt="Profile Picture Preview">`;
+            });
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.innerHTML = '<p>No image selected</p>';
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const caseDetails = document.getElementById('case').value;
+            const profilePicture = document.getElementById('profile-picture').files[0];
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function() {
+                const profile = {
+                    name,
+                    age,
+                    caseDetails,
+                    profilePicture: reader.result
+                };
+
+                // Save profile to localStorage
+                const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+                profiles.push(profile);
+                localStorage.setItem('profiles', JSON.stringify(profiles));
+
+                // Redirect to cases page
+                window.location.href = 'cases.html';
+            });
+
+            if (profilePicture) {
+                reader.readAsDataURL(profilePicture);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Cases - Dentist Volunteer Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .profiles {
+            display: flex;
+            align-items: flex-start;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .profiles img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 5px;
+            background: #fff;
+            margin-right: 20px;
+        }
+        .profiles .details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .profiles .details h3 {
+            margin: 0 0 10px;
+            color: #036e10;
+            font-size: 1.5em;
+        }
+        .profiles .details p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .profiles .details .label {
+            font-weight: bold;
+            color: #555;
+        }
+        .delete-button {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .delete-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_for_web.png" alt="logo" style="margin-right: 2000px;">
+        <h1 style="margin-top: -140px; margin-bottom: 30px">Welcome to the Dentist Volunteer Program</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload_page.html">Upload Case</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cases-introduction">
+            <h2>Patient Cases</h2>
+            <p>Patient cases profiles</p>
+        </section>
+        <br>
+        <section id="cases-profiles">
+            <!-- Profiles will be dynamically inserted here -->
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+            const casesProfiles = document.getElementById('cases-profiles');
+
+            function renderProfiles() {
+                casesProfiles.innerHTML = '';
+                profiles.forEach((profile, index) => {
+                    const profileDiv = document.createElement('div');
+                    profileDiv.classList.add('profiles');
+
+                    profileDiv.innerHTML = `
+                        <img src="${profile.profilePicture}" alt="Profile Picture">
+                        <div class="details">
+                            <h3>Patient ${index + 1}</h3>
+                            <p><span class="label">Name:</span> ${profile.name}</p>
+                            <p><span class="label">Age:</span> ${profile.age}</p>
+                            <p><span class="label">Case details:</span> ${profile.caseDetails}</p>
+                        </div>
+                        <button class="delete-button" data-index="${index}">Delete</button>
+                    `;
+
+                    casesProfiles.appendChild(profileDiv);
+                });
+
+                document.querySelectorAll('.delete-button').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        profiles.splice(index, 1);
+                        localStorage.setItem('profiles', JSON.stringify(profiles));
+                        renderProfiles();
+                    });
+                });
+            }
+
+            renderProfiles();
+        });
+    </script>
+</body>
+</html>
+
+
+
+

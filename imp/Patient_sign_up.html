@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Dentist Volunteer Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for the sign-in page */
+        #sign-in-form {
+            max-width: 600px;
+            height: 450px;
+            margin: auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+        #sign-in-form label, 
+        #sign-in-form input {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+        #sign-in-form button {
+            display: block;
+            width: 100%;
+            background-color: green;
+            color: white;
+            padding: 0.5em;
+            border: none;
+            border-radius: 0.5em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #sign-in-form button:hover {
+            background-color: darkgreen;
+        }
+        #sign-up-box {
+            display: block;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            padding: 0.5em;
+            border: none;
+            border-radius: 0.5em;
+            text-align: center;
+            font-size: 1em;
+            margin-top: 1em;
+            text-decoration: none;
+        }
+        #sign-up-box:hover {
+            background-color: lightblue;
+        }
+        #details{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_for_web.png" alt="logo" style="margin-right: 2000px;">
+        <h1 style="margin-top: -140px; margin-bottom: 30px">Sign In As a Patient Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="sign-in-form">
+    
+            <h2>Sign In</h2>
+            <div id="details">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                <a href="Upload_page.html"><button type="submit">Sign In</button>
+            </div>
+            <a id="sign-up-box" href="signup.html">Don't have an account? Sign Up</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dentist Volunteer Program</p>
+    </footer>
+</body>
+</html>

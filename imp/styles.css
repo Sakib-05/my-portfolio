@@ -1,0 +1,95 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+nav{
+    margin-top: 20px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+    background-color: #036e10;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+.details{
+    
+}
+.profiles{
+    background-color: rgb(218, 218, 218);
+    padding-bottom: 120px;
+    padding-left: 10px;
+    border-radius: 20px;
+}
