@@ -99,4 +99,10 @@ main{
     color: rgb(2, 69, 162);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-/* test commit */
+
+.about-me{
+    background-color: rgb(191, 248, 248);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+}
