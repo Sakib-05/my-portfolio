@@ -1,2 +1,2 @@
-This is my website portfolio porject.
+This is my website portfolio project.
 
